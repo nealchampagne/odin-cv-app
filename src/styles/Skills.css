@@ -1,0 +1,14 @@
+.skillsform {
+  gap: 2rem;
+  padding: 2rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+}
+
+.skillsform .datafield, label {
+  width: 50%;
+}
+
+p {
+  width: 50%;
+}

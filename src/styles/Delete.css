@@ -1,0 +1,14 @@
+.deletebtn {
+  float: right;
+  margin: 0.4rem 0.5rem 0 -2.5rem;
+  z-index: 1;
+  background: none;
+  border: none;
+  border-radius: .25rem;
+  color: red;
+  font-size: 1.5rem;
+}
+
+.deletebtn:hover {
+  cursor: pointer;
+}

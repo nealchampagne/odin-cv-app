@@ -1,0 +1,12 @@
+.editbtn {
+  justify-self: center;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: blue;
+  font-size: 0.9rem;
+}
+
+.editbtn:hover{
+  cursor: pointer;
+}
