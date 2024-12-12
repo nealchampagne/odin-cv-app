@@ -2,8 +2,9 @@ import { useState } from 'react'
 import Input from './Input';
 import Submit from './Submit';
 import Edit from './Edit';
+import '../styles/Skills.css';
 
-const Skills = () => {
+const Skills = ({className}) => {
 
   const [data, setData] = useState({
     skills: '',
@@ -11,12 +12,12 @@ const Skills = () => {
   });
 
   const handleChange = (e) => {
-    const { value, name} = e.target
+    const { value, name} = e.target;
     setData({
       ...data, 
       [name]: value
-    })
-  }
+    });
+  };
 
   const handleSubmit = (e) => {
     setData({
@@ -24,10 +25,10 @@ const Skills = () => {
       submit: !data.submit
     });
     e.preventDefault();
-  }
+  };
 
   return (
-    <>
+    <div className={className}>
       <style>
         {data.submit
         ? `.skillsform {display: none}
@@ -53,8 +54,8 @@ const Skills = () => {
           onClick={handleSubmit}
         />
       </div>
-    </>
+    </div>
   )
 }
 
-export default Skills
+export default Skills;

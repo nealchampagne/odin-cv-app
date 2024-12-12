@@ -3,8 +3,9 @@ import Input from './Input';
 import Submit from './Submit';
 import Edit from './Edit';
 import Delete from './Delete';
+import '../styles/Education.css'
 
-const Education = ({id, deleteFunc}) => {
+const Education = ({id, className, deleteFunc}) => {
   const [data, setData] = useState({
     id: id,
     degree: '',
@@ -19,7 +20,7 @@ const Education = ({id, deleteFunc}) => {
     setData({
       ...data, 
       [name]: value
-    })
+    });
   };
 
   const handleSubmit = (e) => {
@@ -31,7 +32,7 @@ const Education = ({id, deleteFunc}) => {
   };
 
   return (
-    <>
+    <div className={className}>
       <style>
         {data.submit
         ? `#form${data.id} {display: none}
@@ -75,7 +76,7 @@ const Education = ({id, deleteFunc}) => {
           onClick={handleSubmit}
         />
       </form>
-      <div id={'card'+data.id} className='edu'>
+      <div id={'card'+data.id} className='educard'>
         <p>Degree: {data.degree}</p>
         <p>School: {data.school}</p>
         <p>{data.start} - {data.end}</p>
@@ -83,7 +84,7 @@ const Education = ({id, deleteFunc}) => {
           onClick={handleSubmit}
         />
       </div>
-    </>
+    </div>
   )
 }
 

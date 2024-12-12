@@ -3,6 +3,7 @@ const Input = ({ label, name, type, value, onChange }) =>
     {label}
     {' '}
     <input
+      className='datafield'
       name={name}
       type={type}
       value={value}

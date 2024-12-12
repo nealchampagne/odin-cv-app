@@ -3,8 +3,9 @@ import Input from './Input';
 import Submit from './Submit';
 import Edit from './Edit';
 import Delete from './Delete';
+import '../styles/Work.css';
 
-const Work = ({id, deleteFunc}) => {
+const Work = ({id, className, deleteFunc}) => {
   const [data, setData] = useState({
     id: id,
     position: '',
@@ -20,8 +21,8 @@ const Work = ({id, deleteFunc}) => {
     setData({
       ...data, 
       [name]: value
-    })
-  }
+    });
+  };
 
   const handleSubmit = (e) => {
     setData({
@@ -29,10 +30,10 @@ const Work = ({id, deleteFunc}) => {
       submit: !data.submit
     });
     e.preventDefault();
-  }
+  };
 
   return (
-    <>
+    <div className={className}>
       <style>
         {data.submit
         ? `#form${data.id} {display: none}
@@ -83,7 +84,7 @@ const Work = ({id, deleteFunc}) => {
           onClick={handleSubmit}
         />
       </form>
-      <div id={'card'+data.id} className='work'>
+      <div id={'card'+data.id} className='workcard'>
         <p>Position: {data.position}</p>
         <p>Company: {data.company}</p>
         <p>{data.start} - {data.end}</p>
@@ -92,7 +93,7 @@ const Work = ({id, deleteFunc}) => {
           onClick={handleSubmit}
         />
       </div>
-    </>
+    </div>
   )
 }
 

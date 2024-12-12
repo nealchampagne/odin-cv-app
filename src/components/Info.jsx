@@ -2,8 +2,9 @@ import { useState } from 'react'
 import Input from './Input';
 import Submit from './Submit';
 import Edit from './Edit';
+import '../styles/Info.css';
 
-const Info = () => {
+const Info = ({className}) => {
 
   const [data, setData] = useState({
     name: '',
@@ -17,8 +18,8 @@ const Info = () => {
     setData({
       ...data, 
       [name]: value
-    })
-  }
+    });
+  };
 
   const handleSubmit = (e) => {
     setData({
@@ -26,10 +27,10 @@ const Info = () => {
       submit: !data.submit
     });
     e.preventDefault();
-  }
+  };
 
   return (
-    <>
+    <div className={className}>
       <style>
         {data.submit
         ? `.infoform {display: none}
@@ -71,7 +72,7 @@ const Info = () => {
           onClick={handleSubmit}
         />
       </div>
-    </>
+    </div>
   )
 }
 
