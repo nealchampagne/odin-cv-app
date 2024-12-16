@@ -10,6 +10,7 @@ const Work = ({id, className, deleteFunc}) => {
     id: id,
     position: '',
     company: '',
+    location: '',
     start: '',
     end: '',
     responsibilities: '',
@@ -46,6 +47,13 @@ const Work = ({id, className, deleteFunc}) => {
       />
       <form id={'form'+data.id} className='workform'>
         <Input
+          label='Company'
+          name='company'
+          type='text'
+          value={data.company}
+          onChange={handleChange}
+        />
+        <Input
           label='Position'
           name='position'
           type='text'
@@ -53,10 +61,10 @@ const Work = ({id, className, deleteFunc}) => {
           onChange={handleChange}
         />
         <Input
-          label='Company'
-          name='company'
+          label='Location'
+          name='location'
           type='text'
-          value={data.company}
+          value={data.location}
           onChange={handleChange}
         />
         <Input
@@ -85,9 +93,16 @@ const Work = ({id, className, deleteFunc}) => {
         />
       </form>
       <div id={'card'+data.id} className='workcard'>
-        <p>Position: {data.position}</p>
-        <p>Company: {data.company}</p>
-        <p>{data.start} - {data.end}</p>
+        <div className="top">
+          <div className="topleft">
+            <p><b>{data.company}</b></p>
+            <p>{data.position}</p>
+          </div>
+          <div className="topright">
+            <p>{data.location}</p>
+            <p>{data.start} - {data.end}</p>
+          </div>
+        </div>
         <p>Responsibilites: {data.responsibilities}</p>
         <Edit 
           onClick={handleSubmit}

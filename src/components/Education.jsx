@@ -8,10 +8,12 @@ import '../styles/Education.css'
 const Education = ({id, className, deleteFunc}) => {
   const [data, setData] = useState({
     id: id,
-    degree: '',
     school: '',
+    location: '',
     start: '',
     end: '',
+    degree: '',
+    coursework: '',
     submit: false
   });
 
@@ -45,17 +47,17 @@ const Education = ({id, className, deleteFunc}) => {
       />
       <form id={'form'+data.id} className='eduform'>
         <Input
-          label='Degree'
-          name='degree'
-          type='text'
-          value={data.degree}
-          onChange={handleChange}
-        />
-        <Input
           label='School'
           name='school'
           type='text'
           value={data.school}
+          onChange={handleChange}
+        />
+        <Input
+          label='Location'
+          name='location'
+          type='text'
+          value={data.location}
           onChange={handleChange}
         />
         <Input
@@ -72,14 +74,36 @@ const Education = ({id, className, deleteFunc}) => {
           value={data.end}
           onChange={handleChange}
         />
+        <Input
+          label='Degree'
+          name='degree'
+          type='text'
+          value={data.degree}
+          onChange={handleChange}
+        />
+        <Input
+          label='Coursework'
+          name='coursework'
+          type='text'
+          value={data.coursework}
+          onChange={handleChange}
+        />
         <Submit
           onClick={handleSubmit}
         />
       </form>
       <div id={'card'+data.id} className='educard'>
-        <p>Degree: {data.degree}</p>
-        <p>School: {data.school}</p>
-        <p>{data.start} - {data.end}</p>
+        <div className="top">
+          <div className='topleft'>
+            <p><b>{data.school}</b></p>
+            <p>{data.degree}</p>
+          </div>
+          <div className="topright">
+            <p>{data.location}</p>
+            <p>{data.start} - {data.end}</p>
+          </div>
+        </div>
+        <p>Coursework: {data.coursework}</p>
         <Edit 
           onClick={handleSubmit}
         />

@@ -27,14 +27,20 @@ const CV = () => {
   };
 
   return(
-    <div id="content">
-      <Info className='section'/>
-      {eduCards.map(id => <Education id={id} className='section' key={id} deleteFunc={() => deleteEduCard(id)}/>)}
-      <button className='addbutton' onClick={handleAddEdu}>Add Education</button>
-      {workCards.map(id => <Work id={id} className='section' key={id} deleteFunc={() => deleteWorkCard(id)}/>)}
-      <button className='addbutton' onClick={handleAddWork}>Add Work</button>
-      <Skills className='section'/>
-    </div>
+    <>
+      <div id="title">CV Formatter</div>
+      <div id="content">
+        <Info className='section'/>
+        <h2>Education</h2>
+        {eduCards.map(id => <Education id={id} className='section' key={id} deleteFunc={() => deleteEduCard(id)}/>)}
+        <button className='addbutton' onClick={handleAddEdu}>Add Education</button>
+        <h2>Work</h2>
+        {workCards.map(id => <Work id={id} className='section' key={id} deleteFunc={() => deleteWorkCard(id)}/>)}
+        <button className='addbutton' onClick={handleAddWork}>Add Work</button>
+        <h2>Skills</h2>
+        <Skills className='section'/>
+      </div>
+    </>
   )
 }
 

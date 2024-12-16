@@ -8,6 +8,7 @@ const Info = ({className}) => {
 
   const [data, setData] = useState({
     name: '',
+    address: '',
     email: '',
     phone: '',
     submit: false
@@ -47,6 +48,13 @@ const Info = ({className}) => {
           onChange={handleChange}
         />
         <Input
+          label='Address'
+          name='address'
+          type='text'
+          value={data.address}
+          onChange={handleChange}
+        />
+        <Input
           label='Email'
           name='email'
           type='text'
@@ -66,8 +74,13 @@ const Info = ({className}) => {
       </form>
       <div className='info'>
         <h1>{data.name}</h1>
-        <p>Email: {data.email}</p>
-        <p>Phone: {data.phone}</p>
+        <div className="bottom">
+          <p>{data.address}</p>
+          <p className='dot'>•</p>
+          <p>{data.email}</p>
+          <p className='dot'>•</p>
+          <p>{data.phone}</p>
+        </div>
         <Edit 
           onClick={handleSubmit}
         />

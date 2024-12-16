@@ -1,7 +1,9 @@
+import '../styles/Input.css'
+
 const Input = ({ label, name, type, value, onChange }) =>
-  <label>
-    {label}
-    {' '}
+  <div className="inputcontainer">
+    <label for={name}>{label}
+    </label>
     <input
       className='datafield'
       name={name}
@@ -9,6 +11,6 @@ const Input = ({ label, name, type, value, onChange }) =>
       value={value}
       onChange={onChange}
     />
-  </label>
+  </div>
 
 export default Input;

@@ -49,7 +49,7 @@ const Skills = ({className}) => {
         />
       </form>
       <div className='skills'>
-        <p>Skills: {data.skills}</p>
+        <p><b>Skills:</b> {data.skills}</p>
         <Edit 
           onClick={handleSubmit}
         />
