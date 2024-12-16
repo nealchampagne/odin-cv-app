@@ -1,14 +1,40 @@
 .workform {
   gap: 2rem;
+  margin-top: 1rem;
   padding: 2rem;
   border: 1px solid black;
   border-radius: 0.5rem;
 }
 
-.workform .datafield, label {
-  width: 50%;
+.workcard {
+  margin: 2rem 2rem 0 2rem;
+  display: grid;
+  grid-template-rows: repeat(min-content);
+  gap: 1rem;
+}
+
+.workcard .top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: start;
+  align-items: start;
+}
+
+.workcard .topleft {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.workcard .topright {
+  justify-self: end;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-items: end;
+  margin-right: 3rem;
 }
 
 p {
-  width: 50%;
+  margin: 0;
 }

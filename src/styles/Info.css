@@ -4,3 +4,23 @@
   border: 1px solid black;
   border-radius: 0.5rem;
 }
+
+.info {
+  margin: 0 0 0 2rem;
+  padding: 1rem 3rem;
+  grid-template-rows: min-content 1fr;
+  justify-items: center;
+  align-items: start;
+}
+
+.info .bottom {
+  display: grid;
+  grid-template-columns: max-content 1rem max-content 1rem max-content;
+  align-items: center;
+  justify-items: center;
+  gap: 0.5rem;
+}
+
+.info .dot {
+  font-size: 1.5rem;
+}

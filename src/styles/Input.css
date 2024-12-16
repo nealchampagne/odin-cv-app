@@ -1,0 +1,11 @@
+.inputcontainer {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  width: 400px;
+  align-items: center;
+}
+
+label {
+  font-weight: 400;
+  font-size: .9rem;
+}

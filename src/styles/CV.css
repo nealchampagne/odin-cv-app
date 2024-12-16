@@ -1,21 +1,48 @@
 body {
   padding: 2rem;
   margin: 0;
+  display: grid;
+  justify-items: center;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+#title {
+  justify-self: center;
+  padding: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 #content {
   display: grid;
   align-items: center;
   justify-items: center;
-  gap: 2rem;
+  width: calc(800px + 1rem);
+  padding: 3rem;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px hsl(0, 0%, 40%);
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1rem;
+  margin: 0;
 }
 
 div.section {
   width: 800px;
+  display: grid;
+  font-size: .8rem;
+  margin-bottom: 2rem;
 }
 
 .addbutton {
-  width: 6rem;
+  justify-self: end;
+  width: max-content;
+  margin: 0 2rem 1rem 0;
   padding: 8px 16px;
   border: none;
   border-radius: .25rem;
