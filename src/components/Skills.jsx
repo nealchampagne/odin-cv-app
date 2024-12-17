@@ -4,13 +4,16 @@ import Submit from './Submit';
 import Edit from './Edit';
 import '../styles/Skills.css';
 
+// Pass class name to the component as a prop
 const Skills = ({className}) => {
 
+  // Hold the input form value as data object and track submission status in state
   const [data, setData] = useState({
     skills: '',
     submit: false
   });
 
+  // Update object in state on form input
   const handleChange = (e) => {
     const { value, name} = e.target;
     setData({
@@ -19,6 +22,7 @@ const Skills = ({className}) => {
     });
   };
 
+  // Set submission value in state on submit
   const handleSubmit = (e) => {
     setData({
       ...data,
@@ -29,6 +33,7 @@ const Skills = ({className}) => {
 
   return (
     <div className={className}>
+      {/** Hide and show form/card based on submit boolean in state */}
       <style>
         {data.submit
         ? `.skillsform {display: none}

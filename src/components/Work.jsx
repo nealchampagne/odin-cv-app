@@ -5,7 +5,11 @@ import Edit from './Edit';
 import Delete from './Delete';
 import '../styles/Work.css';
 
+
+// Pass id, classname, and delete function as props to the component
 const Work = ({id, className, deleteFunc}) => {
+
+  // Hold the input form value as data object and track submission status in state
   const [data, setData] = useState({
     id: id,
     position: '',
@@ -17,6 +21,7 @@ const Work = ({id, className, deleteFunc}) => {
     submit: false
   });
 
+  // Update object in state on form input
   const handleChange = (e) => {
     const { value, name} = e.target
     setData({
@@ -25,6 +30,7 @@ const Work = ({id, className, deleteFunc}) => {
     });
   };
 
+  // Set submission value in state on submit
   const handleSubmit = (e) => {
     setData({
       ...data,
@@ -35,6 +41,7 @@ const Work = ({id, className, deleteFunc}) => {
 
   return (
     <div className={className}>
+      {/** Hide and show form/card based on submit boolean in state */}
       <style>
         {data.submit
         ? `#form${data.id} {display: none}
@@ -42,6 +49,7 @@ const Work = ({id, className, deleteFunc}) => {
         : `#form${data.id} {display: grid}
           #card${data.id} {display: none}`}
       </style>
+      {/** Delete button gets passed the same delete function as the component */}
       <Delete 
         onClick={deleteFunc}
       />
